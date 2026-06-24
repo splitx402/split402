@@ -6,7 +6,7 @@
   "packageManager": "pnpm@10.30.2",
   "scripts": {
     "build": "corepack pnpm -r build",
-    "lint": "eslint .",
+    "lint": "corepack pnpm -r build && eslint .",
     "test": "corepack pnpm -r test",
     "typecheck": "corepack pnpm -r build && corepack pnpm typecheck:root && corepack pnpm -r typecheck",
     "typecheck:root": "tsc -p tsconfig.json --noEmit",
