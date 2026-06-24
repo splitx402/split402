@@ -14,9 +14,9 @@ jobs:
         with:
           node-version: 24
       - run: corepack enable
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm lint
-      - run: pnpm typecheck
-      - run: pnpm vectors:check
-      - run: pnpm test
-      - run: pnpm audit --audit-level high
+      - run: corepack pnpm install --frozen-lockfile
+      - run: corepack pnpm lint
+      - run: corepack pnpm typecheck
+      - run: corepack pnpm vectors:check
+      - run: corepack pnpm test
+      - run: corepack pnpm audit --audit-level high
