@@ -1,0 +1,52 @@
+{
+  "name": "split402",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.30.2",
+  "scripts": {
+    "build": "corepack pnpm -r build",
+    "lint": "eslint .",
+    "test": "corepack pnpm -r test",
+    "typecheck": "corepack pnpm -r build && corepack pnpm typecheck:root && corepack pnpm -r typecheck",
+    "typecheck:root": "tsc -p tsconfig.json --noEmit",
+    "vectors": "corepack pnpm --filter @split402/protocol vectors",
+    "vectors:check": "corepack pnpm --filter @split402/protocol vectors:check",
+    "audit": "corepack pnpm audit --audit-level high",
+    "demo:merchant": "corepack pnpm --filter @split402/demo-merchant dev",
+    "demo:inspect-offer": "corepack pnpm --filter @split402/demo-agent inspect-offer",
+    "demo:setup-buyer": "corepack pnpm --filter @split402/demo-agent setup-buyer",
+    "demo:setup-mint": "corepack pnpm --filter @split402/demo-agent setup-mint",
+    "demo:setup-existing-token": "corepack pnpm --filter @split402/demo-agent setup-existing-token",
+    "demo:preflight": "corepack pnpm --filter @split402/demo-agent preflight",
+    "demo:paid-suite": "corepack pnpm build && corepack pnpm --filter @split402/demo-agent paid-suite",
+    "demo:agent": "corepack pnpm --filter @split402/demo-agent dev"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.3",
+    "vitest": "^4.0.13"
+  },
+  "dependencies": {
+    "@scure/base": "^2.2.0",
+    "@solana/kit": "^5.1.0",
+    "@solana/sysvars": "~5.1.0",
+    "@x402/axios": "^2.16.0",
+    "@x402/core": "^2.16.0",
+    "@x402/express": "^2.16.0",
+    "@x402/svm": "^2.16.0",
+    "axios": "^1.18.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "ws": "^8.21.0"
+    }
+  }
+}
